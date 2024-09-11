@@ -9,7 +9,7 @@ import requests
 app = Flask(__name__)  
 @app.route('/commits/')
 def commits():
-    url = 'https://api.github.com/repos/OpenRSI/5MCSI_Metriques/commits'
+    url = 'https://github.com/MaxemeBonilauri/5MCSI_Metriques/commits'
     response = requests.get(url)
     commits_data = response.json()
     return render_template("commits.html")
