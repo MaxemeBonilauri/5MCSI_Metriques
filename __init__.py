@@ -12,6 +12,7 @@ def commits():
     url = 'https://api.github.com/repos/OpenRSI/5MCSI_Metriques/commits'
     response = requests.get(url)
     commits_data = response.json()
+    return render_template("commits.html")
   
 @app.route('/extract-minutes/<date_string>')
 def extract_minutes(date_string):
