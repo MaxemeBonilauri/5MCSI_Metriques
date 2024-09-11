@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -8,9 +9,9 @@
     <div id="chart_div"></div>
     <script>
       google.charts.load('current', { packages: ['corechart'] });
-      google.charts.setOnLoadCallback(drawHistogram);
+      google.charts.setOnLoadCallback(drawBackgroundColor);
 
-       function drawHistogram() {
+      function drawBackgroundColor() {
         function drawChart(data) {
           // Convertir les données récupérées en un tableau utilisable par Google Charts
           var dataTable = new google.visualization.DataTable();
@@ -25,9 +26,13 @@
           var options = {
             title: 'Évolution des températures de la ville de Tawarano',
             legend: { position: 'bottom' },
-            hAxis: { title: 'Date' },
-            vAxis: { title: 'Température' },
-            bar: { groupWidth: '75%' },
+            bar: { groupWidth: '75%' }, // Ajuste la largeur des barres
+            hAxis: {
+              title: 'Date',
+            },
+            vAxis: {
+              title: 'Température',
+            },
           };
 
           var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
